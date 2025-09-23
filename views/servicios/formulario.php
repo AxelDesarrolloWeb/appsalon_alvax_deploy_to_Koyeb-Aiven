@@ -21,13 +21,3 @@
 
   />
 </div>
-
-<div class="campo">
- <label for="precio">Precio</label>
- <input
-  type="text"
-  id="precio"
-  placeholder="Precio Servicio"
-  name="precio"
-  />
-</div>
