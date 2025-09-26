@@ -23,13 +23,26 @@ function esUltimo(string $actual, string $proximo): bool {
 
 // Función que revisa que el usuario este autenticado
 function isAuth() : void {
-    if(!isset($_SESSION['login'])) {
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+    if (empty($_SESSION['login'])) {
         header('Location: /');
+        exit;
     }
 }
 
 function isAdmin() : void {
-    if(!isset($_SESSION['admin'])) {
-        header('Location: /');
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+    // Debe existir y ser exactamente "1"
+    if (empty($_SESSION['admin']) || $_SESSION['admin'] !== "1") {
+        if (!empty($_SESSION['login'])) {
+            header('Location: /cita');
+        } else {
+            header('Location: /');
+        }
+        exit;
     }
 }

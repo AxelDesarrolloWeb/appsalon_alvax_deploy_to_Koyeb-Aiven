@@ -29,12 +29,16 @@ class LoginController {
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
 
-                        // Redireccionamiento
+                        // Redireccionamiento y rol
                         if($usuario->admin === "1") {
-                            $_SESSION['admin'] = $usuario->admin ?? null;
+                            $_SESSION['admin'] = "1";
                             header('Location: /admin');
+                            exit;
                         } else {
+                            // Asegura que no quede arrastrado un estado de admin previo
+                            $_SESSION['admin'] = "0";
                             header('Location: /cita');
+                            exit;
                         }
                     }
                 } else {

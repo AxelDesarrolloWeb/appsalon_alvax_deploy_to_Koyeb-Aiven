@@ -1,0 +1,10 @@
+
+Warning: Undefined array key 1 in ****************\controllers\AdminController.php on line 17
+
+Warning: Undefined array key 2 in ****************\controllers\AdminController.php on line 17
+
+Deprecated: checkdate(): Passing null to parameter #1 ($month) of type int is deprecated in ****************\controllers\AdminController.php on line 17
+
+Deprecated: checkdate(): Passing null to parameter #2 ($day) of type int is deprecated in ****************\controllers\AdminController.php on line 17
+
+Fatal error: Uncaught TypeError: checkdate(): Argument #3 ($year) must be of type int, string given in ****************\controllers\AdminController.php:17 Stack trace: #0 ****************\controllers\AdminController.php(17): checkdate(NULL, NULL, 'function n(){do...') #1 [internal function]: Controllers\AdminController::index(Object(MVC\Router)) #2 ****************\Router.php(45): call_user_func(Array, Object(MVC\Router)) #3 ****************\public\index.php(63): MVC\Router->comprobarRutas() #4 {main} thrown in ****************\controllers\AdminController.php on line 17

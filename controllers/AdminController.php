@@ -1,14 +1,15 @@
-<?php 
+<?php
 
 namespace Controllers;
 
 use Model\AdminCita;
 use MVC\Router;
 
-class AdminController {
-    public static function index( Router $router ) {
-        session_start();
+class AdminController  {
 
+    public static function index ( Router $router ) {
+         
+        session_start();
         isAdmin();
 
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
@@ -32,9 +33,9 @@ class AdminController {
 
         $citas = AdminCita::SQL($consulta);
 
-        $router->render('admin/index', [
+        $router->render('admin/index',[
             'nombre' => $_SESSION['nombre'],
-            'citas' => $citas, 
+            'citas' => $citas,
             'fecha' => $fecha
         ]);
     }

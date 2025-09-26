@@ -1,6 +1,7 @@
 <h1 class="nombre-pagina">Panel de Administración</h1>
-<?php
-include_once __DIR__ . '/../templates/barra.php';
+
+<?php  
+    include_once __DIR__ . '/../templates/barra.php';
 ?>
 
 <h2>Buscar Citas</h2>
@@ -8,15 +9,20 @@ include_once __DIR__ . '/../templates/barra.php';
     <form class="formulario">
         <div class="campo">
             <label for="fecha">Fecha</label>
-            <input type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" />
+            <input
+                type="date"
+                id="fecha"
+                name="fecha"
+                value="<?php echo $fecha; ?>"
+            />
         </div>
     </form>
 </div>
 
-<?php
-if (count($citas) === 0) {
-    echo "<h2>No hay citas en esta fecha</h2>";
-}
+<?php 
+    if(count($citas) === 0) {
+        echo "<h3>No hay Citas en esta Fecha!</h2>";
+    }
 ?>
 
 <div class="citas-admin">
